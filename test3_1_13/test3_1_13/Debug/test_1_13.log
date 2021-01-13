@@ -1,0 +1,11 @@
+﻿生成启动时间为 2021/1/13 15:20:51。
+     1>项目“E:\learningcode\c\test_1_13\test_1_13\test_1_13.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         E:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt static_test.c
+         static_test.c
+     1>e:\learningcode\c\test_1_13\test_1_13\static_test.c(61): error C2205: “global_val”: 不能对带有块范围的外部变量进行初始化
+     1>已完成生成项目“E:\learningcode\c\test_1_13\test_1_13\test_1_13.vcxproj”(Build 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:00.07
