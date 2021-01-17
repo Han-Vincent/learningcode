@@ -2,71 +2,28 @@
 #include <stdio.h>
 
 
+
+//编写代码实现，模拟用户登录情景，并且只能登录三次。（只允许输入三次密码，如果密码正确则
+//提示登录成，如果三次均输入错误，则退出程序。
+
+
 int main()
 {
-	int arr[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+	char psw[10] = "";
 	int i = 0;
-	int k = 0;
-	int left = 0;
-	int right= sizeof(arr) / sizeof(arr[0])-1;
-	int mid = (left + right) / 2;
-	printf("请输入要查找的数字：");
-	scanf("%d", &k);
-	while (left<=right)
+	int j = 0;
+	for (i = 0; i < 3; ++i)
 	{
-
-		if (arr[mid]<k)
-		{
-			left = mid+1;
-		}
-
-		else if (arr[mid]>k)
-		{
-			right = mid-1;
-		}
-
-		else if (k ==arr[mid])
-		{
-			printf("找到了，下标是：%d\n", mid);
+		printf("please input:");
+		scanf("%s", psw);
+		if (strcmp(psw, "password") == 0)//==不能发用来比较两个字符串是否相等，应该使用一个库函数-strcmp 
 			break;
-		}
-		
 	}
-	if (left <= right)		//妙啊
-		printf("找到了，下标是：%d\n", mid);
+	if (i == 3)
+		printf("exit\n");
 	else
-	{
-		printf("没找到");
-	}
-
-	return 0;
+		printf("log in\n");
 }
-
-
-
-
-
-////编写代码实现，模拟用户登录情景，并且只能登录三次。（只允许输入三次密码，如果密码正确则
-////提示登录成，如果三次均输入错误，则退出程序。
-//
-//
-//int main()
-//{
-//	char psw[10] = "";
-//	int i = 0;
-//	int j = 0;
-//	for (i = 0; i < 3; ++i)
-//	{
-//		printf("please input:");
-//		scanf("%s", psw);
-//		if (strcmp(psw, "password") == 0)//==不能发用来比较两个字符串是否相等，应该使用一个库函数-strcmp 
-//			break;
-//	}
-//	if (i == 3)
-//		printf("exit\n");
-//	else
-//		printf("log in\n");
-//}
 
 
 
