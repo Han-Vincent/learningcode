@@ -7,21 +7,21 @@ int main()
 {
 	int i = 0;
 	int count = 0;
-	for (i = 1; 1 < 100; i++)
+	for (i = 1; i< 100; i++)
 	{
 		if (i / 10 == 9)
 		{
-			printf("%d", i);
+			printf("%d\n", i);
 			count++;
 		}
 		if (i %10==9)
 		{
-			printf("%d", i);
+			printf("%d\n", i);
 			count++;
 		}
 		
 	}
-	printf("count=%d", count);
+	printf("count=%d\n", count);
 
 	return 0;
 }
