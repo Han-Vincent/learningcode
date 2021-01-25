@@ -1,15 +1,32 @@
-
+#define _CRT_SECURE_NO_WARNINGS 1
 #include "game.h"
 
 //整个游戏算法的实现
 
 void game()
 {
+	int ret = 0;
 	//数组-存放棋盘信息
-	char board[ROW][COL];
+	char chess[ROW][COL] = { 0 };
+	//初始化棋盘
+	InitBoard(chess, ROW, COL);
+	//打印棋盘
+	DisplayBoard(chess, ROW, COL);
+	
+	//玩家下棋
+	PlayerMove(chess,ROW,COL);
+	//打印棋盘
+	DisplayBoard(chess, ROW, COL);
+	//电脑下棋
+	ComputerMove(chess, ROW, COL);
 
-	InitBoard(board[ROW][COL], ROW, COL);
-	DisplayBoard(board[ROW][COL], ROW, COL);
+	DisplayBoard(chess, ROW, COL);
+
+	ret = isFull(chess, ROW, COL);
+	
+
+
+
 	
 
 
@@ -25,8 +42,9 @@ void menu()
 	printf("---------------------\n");
 }
 
-int main()
+void test()
 {
+	srand((unsigned int)time(NULL));
 	int input = 0;
 	do
 	{
@@ -46,8 +64,11 @@ int main()
 			break;
 		}
 	} while (input);
+}
 
-
+int main()
+{
+	test();
 	return 0;
 }
 

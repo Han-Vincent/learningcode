@@ -13,9 +13,12 @@
 #include <time.h>
  
 //ÉùÃ÷º¯Êý
-void InitBoard(char board, int row, int col);
-void DisplayBoard(char board, int row, int col);
-void PlayerMove(char board, int row, int col);
+void InitBoard(char board[ROW][COL], int row, int col);
+void DisplayBoard(char board[ROW][COL],int row, int col);
+void PlayerMove(char board[ROW][COL], int row, int col);
+void ComputerMove(char board[ROW][COL], int row, int col);
+int isFull(char board[ROW][COL], int row, int col);
+char result(char board[ROW][COL], int row, int col);
 #endif
 /*
 
