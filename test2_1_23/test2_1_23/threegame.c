@@ -5,7 +5,7 @@
 
 void game()
 {
-	int ret = 0;
+	char ret = 0;
 	//数组-存放棋盘信息
 	char chess[ROW][COL] = { 0 };
 	//初始化棋盘
@@ -13,23 +13,46 @@ void game()
 	//打印棋盘
 	DisplayBoard(chess, ROW, COL);
 	
-	//玩家下棋
-	PlayerMove(chess,ROW,COL);
-	//打印棋盘
-	DisplayBoard(chess, ROW, COL);
-	//电脑下棋
-	ComputerMove(chess, ROW, COL);
+	while (1)
+	{	
+		//玩家下棋
+		PlayerMove(chess, ROW, COL);
+		//打印棋盘
+		DisplayBoard(chess, ROW, COL);
+		//判断玩家是否赢
+		ret = result(chess, ROW, COL);
+		
+		if ('C' != ret)
+		{
+			break;
+		}
 
-	DisplayBoard(chess, ROW, COL);
+		//电脑下棋
+		ComputerMove(chess, ROW, COL);
+		//打印棋盘
+		DisplayBoard(chess, ROW, COL);
+		//判断电脑是否赢
+		ret = result(chess, ROW, COL);
+		
+		if ('C' != ret)
+		{
+			break;
+		}
 
-	ret = isFull(chess, ROW, COL);
-	
+	}
 
-
-
-	
-
-
+	if (ret == '*')
+	{
+		printf("玩家赢\n");
+	}
+	if (ret == '#')
+	{
+		printf("电脑赢\n");
+	}
+	if (ret == '-')
+	{
+		printf("平局\n");
+	}
 
 }
 

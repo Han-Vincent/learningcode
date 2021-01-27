@@ -48,7 +48,7 @@ void PlayerMove(char board[ROW][COL], int row, int col)
 	int y = 0;
 	while (1)
 	{
-		printf("请玩家输入要下棋的位置坐标（如3，2）\n\n");
+		printf("请玩家输入要下棋的位置坐标（如3，2）\n");
 		scanf("%d,%d", &x, &y);
 		if (x >= 1 && x <= row && y >= 1 && y <= col && board[x - 1][y - 1] == ' ')
 		{
@@ -63,11 +63,13 @@ void PlayerMove(char board[ROW][COL], int row, int col)
 }
 void ComputerMove(char board[ROW][COL], int row, int col)
 {
-	int x = rand() % row;
-	int y = rand() % col;
+	int x = 0; 
+	int y = 0;
 	printf("电脑下棋\n\n");
 	while (1)
 	{
+		 x = rand() % row;
+		 y = rand() % col;
 		if (board[ x ][ y ] == ' ')
 		{
 			board[ x ][ y ] = '#';
@@ -95,13 +97,45 @@ int isFull(char board[ROW][COL], int row, int col)
 
 char result(char board[ROW][COL], int row, int col)
 {
+	int i = 0;
+	for (i = 0; i < row; i++)
+	{
+		if (board[i][0] == board[i][1] && board[i][1] == board[i][2] && board[i][1]!= ' ')
+		{
+			return board[i][0];
+		}
+	}
 
+	for (i = 0; i < col; i++)
+	{
+		if (board[0][i] == board[1][i] && board[1][i] == board[2][i] && board[1][i] != ' ')
+		{
+			return board[0][i];
+		}
+	}
 
-
-
-
+	if (board[0][0] == board[1][1] && board[1][1] == board[2][2] && board[1][1] != ' ')
+		return board[1][1];
+	if (board[0][2] == board[1][1] && board[1][1] == board[2][0] && board[1][1] != ' ')
+		return board[1][1];
+	if (1 == isFull(board, ROW, COL))
+	{
+		return '-';
+	}
+	
+	return 'C';
 }
 	
+/*
+
+玩家赢 *
+电脑赢 #
+平局   -
+继续 C
+
+
+*
+/
 
 
 
