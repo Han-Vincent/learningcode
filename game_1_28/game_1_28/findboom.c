@@ -3,7 +3,7 @@
 
 void game()
 {
-
+	char ret =' ';
 	char show_board[ROWS][COLS] = { 0 };	//展示给用户的棋盘
 	char secret_board[ROWS][COLS] = { 0 };	//透视版全棋盘
 
@@ -14,8 +14,12 @@ void game()
 	Desplayboard(show_board, ROW, COL);
 	Desplayboard(secret_board, ROW, COL);
 	//埋雷
-	makebooms(secret_board, ROW, COL, BOOMS);
+	Makebooms(secret_board, ROW, COL, BOOMS);
 	Desplayboard(secret_board, ROW, COL);
+	//玩家扫雷
+	 Findbooms(secret_board, show_board, ROW, COL);
+		
+	
 
 }
 
@@ -34,9 +38,9 @@ void menu()
 void test()
 {
 	srand((unsigned int)time(NULL));
-	menu();
 	int input = 0;
 	do{
+		menu();
 		scanf("%d", &input);
 		switch (input)
 		{
@@ -44,7 +48,7 @@ void test()
 			game();
 			break;
 		case 0:
-			printf("exit\n");
+			printf("退出游戏\n");
 			break;
 		default:
 			printf("输入有误，请重新输入\n");
