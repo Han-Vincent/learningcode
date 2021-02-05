@@ -3,7 +3,7 @@
 
 //int main()
 //{
-//	char* pstr = "hello bit.";//本质上是把hello bit 的首地址放到bit中
+//	char* pstr = "hello bit.";//本质上是把常量字符串hello bit 的首地址放到bit中，常量字符串不能被更改
 //	printf("%s\n", pstr);
 //	return 0;
 //}
@@ -43,7 +43,7 @@ int main()
 {
 	int arr[10] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 	int* p = arr;//指针指向第一个元素
-	int(*pa)[10] = &arr;//数组指针 指向有10个int的数组
+	int(*pa)[10] = &arr;//数组指针 指向有10个元素的数组，数组每个元素类型是int
 	for (int i = 0; i < 10; i++)
 	{
 		printf("%d ", arr[i]);
@@ -97,7 +97,8 @@ int main()
 //	print_arr2(arr, 3, 5); //arr -数组名- 数组名就是首元素地址，但此时二维数组的首元素,也就是第一个一维数组
 //	return 0;
 //}
-
+
+
 
 
 
